@@ -26,7 +26,7 @@ import java.io.IOException;
 
 public class TranslateText {
 
-    public static void translateText() throws IOException {
+    public static void main() throws IOException {
         // TODO(developer): Replace these variables before running the sample.
         String projectId = "covenant-1589850884045";
         // Supported Languages: https://cloud.google.com/translate/docs/languages
