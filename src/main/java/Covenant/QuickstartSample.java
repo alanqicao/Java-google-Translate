@@ -34,9 +34,10 @@ public class QuickstartSample {
                 .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/Users/Alan/Documents/covenant.json")))
                 .build()
                 .getService();
-
+        // Or you can use API key " Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").build().getService(); "
         // The text to translate
-        String text = "Hello, world!";
+        String text = "Hello,World.";
+
 
         // Translates some text into zh
         Translation translation =
