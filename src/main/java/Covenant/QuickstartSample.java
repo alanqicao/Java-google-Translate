@@ -18,15 +18,22 @@ package Covenant;
 
 // [START translate_quickstart]
 // Imports the Google Cloud client library
+
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
+import java.io.FileInputStream;
+
 public class QuickstartSample {
     public static void main(String... args) throws Exception {
         // Instantiates a client
-        Translate translate = TranslateOptions.getDefaultInstance().getService();
+        Translate translate = TranslateOptions.newBuilder()
+                .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/Users/Alan/Documents/covenant.json")))
+                .build()
+                .getService();
 
         // The text to translate
         String text = "Hello, world!";
